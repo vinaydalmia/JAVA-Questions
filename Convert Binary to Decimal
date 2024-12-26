@@ -1,0 +1,35 @@
+import java.util.*;
+
+public class Solution{
+    
+
+
+
+    public static int pow(int g,int j){
+        int temp=1;
+        for(int i=1;i<j;i++){
+            temp=temp*g;
+        }
+        return temp;
+    }
+    public static void main(String[] args){
+  Scanner sc=new Scanner(System.in);
+  int b=sc.nextInt();
+  int x;
+  int c=0;
+  int numb=0;
+  while(b>0){
+    x=b%10;
+    b=b/10;
+    c=c+1;
+    if(x==1){
+numb=pow(2,c)+numb;
+    }
+
+  }
+  System.out.println(numb);
+  
+    
+}
+    
+}

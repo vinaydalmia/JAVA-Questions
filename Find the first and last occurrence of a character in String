@@ -1,0 +1,23 @@
+import java.util.*;
+public class Solution{
+public static void occ(String a,Character b,int c,int x,int y){
+    
+    if(c<0){
+        System.out.println(y +" "+ x);
+        return ;}
+    
+    if(a.charAt(c)==b && x<0){
+        x=c;
+    }
+    if(a.charAt(c)==b){
+        y=c;
+    }
+    occ(a,b,c-1,x,y);
+}
+public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        String s=sc.next();
+        int l=s.length();
+     occ(s,'a',l-1,-1,-1);
+
+    }}

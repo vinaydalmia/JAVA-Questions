@@ -1,0 +1,22 @@
+import java.util.*;
+public class Solution{
+    public static String v="";
+public static void xxx(String a,int b){
+    int l= a.length();
+if(b>l-1){
+    System.out.print(v);
+return;
+}
+if(a.charAt(b)!='x'){
+System.out.print(a.charAt(b));
+}  
+else{
+v=v + 'x';}
+xxx(a,b+1); 
+}
+    public static void main(String[] args) {
+    Scanner sc=new Scanner(System.in);
+    String s = sc.next();
+xxx(s,0);
+    }
+    }

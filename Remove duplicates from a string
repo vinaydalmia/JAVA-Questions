@@ -1,0 +1,22 @@
+import java.util.*;      
+public class Solution{
+    public static boolean[] f=new boolean[26];    //Creating a array fo size 26 and if we find any of the letter we change the index to true.
+public static void xxx(String a,int b){
+    int l= a.length();
+if(b>l-1){
+   return;
+}
+int c = a.charAt(b)-'a';
+if(f[c]!=true){
+    System.out.print(a.charAt(b));
+} 
+f[c]=true;
+xxx(a,b+1); 
+
+}
+    public static void main(String[] args) {
+    Scanner sc=new Scanner(System.in);
+    String s = sc.next();
+xxx(s,0);
+    }
+    }

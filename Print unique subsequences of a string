@@ -1,0 +1,29 @@
+import java.util.*;
+public class Solution{
+    public static int f=0;
+    public static String[] ss=new String[10];
+public static void subsequences(String a,int b,String e){
+    if(b>=a.length()){
+        int g=0;
+    for (int i = 0; i < f; i++) {
+              if(!(ss[i].equals(e))){
+              //  System.out.println(i+" "+ss[i]+" "+e);
+                g=1;}
+            }
+            if(g==1){
+                System.out.println("print"+e);
+            }
+            ss[f]=e;
+            f=f+1;
+            return;
+    }
+        
+    subsequences(a,b+1,e+a.charAt(b));
+    subsequences(a,b+1,e);
+}
+    public static void main(String[] args) {
+    Scanner sc=new Scanner(System.in);
+    String s = sc.next();
+    subsequences(s,0,"");
+    }
+}

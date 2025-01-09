@@ -1,0 +1,72 @@
+
+
+public class LL{
+
+    class Node{
+    int data;
+    Node next;
+
+Node(int data){
+    this.data=data;
+    this.next=null;
+}
+}
+Node head;
+public LL(){
+    head=null;
+}
+
+public void addfirst(int data){
+    Node newnode=new Node(data);
+    if(head==null){
+        head=newnode;
+        return;}
+newnode.next=head;
+head = newnode;
+}
+
+public void addlast(int data){
+    Node newnode=new Node(data);
+    if(head==null){
+        head=newnode;}
+
+   Node tempnode=head;
+    while(tempnode.next !=null){
+        tempnode=tempnode.next;
+    }
+    tempnode.next=newnode;
+}
+
+public void delete(int data){
+Node tempnode=head;
+while(tempnode.data!=data){
+    Node x=tempnode;
+tempnode=tempnode.next;
+x.next=tempnode.next;
+}
+
+}
+
+
+public void printlist(){
+    Node current=head;
+    while(current!=null){
+        System.out.print(current.data+"->");
+        current=current.next;
+    }
+    System.out.println("null");
+}
+
+public static void main(String[] args) {
+    LL list=new LL();
+    list.addfirst(1);
+    list.addfirst(5);
+    list.addfirst(7);
+    list.addfirst(3);
+    list.addfirst(8);
+   list.addlast(9);
+   list.delete(7);
+    list.printlist();
+
+    }
+}
